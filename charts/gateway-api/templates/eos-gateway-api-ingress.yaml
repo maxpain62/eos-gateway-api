@@ -4,7 +4,7 @@ metadata:
   name: eos-gateway-api
 spec:
   rules:
-  - host: dev-gateway.edshopper.com
+  - host: {{ .Values.ingress.host }}
     http:
       paths:
       - path: /
