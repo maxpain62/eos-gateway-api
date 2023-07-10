@@ -32,7 +32,7 @@ spec:
                   //withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
                    //sh "mvn clean package"
                   //  }
-                  sh './mvnw package' 
+                  sh './mvnw clean package -Dmaven.clean.skip=true' 
                    //sh 'mvn clean package'
                 }
             }
