@@ -14,4 +14,3 @@ spec:
   ports:
   - port: 5555
     targetPort: 5555
-
