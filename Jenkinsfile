@@ -32,7 +32,7 @@ spec:
                   //withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
                    //sh "mvn clean package"
                   //  }
-                  sh './mvnw package' 
+                  sh './mvnw package -s settings.xml' 
                    //sh 'mvn clean package'
                 }
             }
@@ -62,14 +62,7 @@ spec:
                     serverId: "jfrog",
                     releaseRepo: "eos-libs-release-local",
                     snapshotRepo: "eos-libs-release-local"
-                )
-
-                rtMavenResolver (
-                    id: "MAVEN_RESOLVER",
-                    serverId: "jfrog",
-                    releaseRepo: "eos-libs-release",
-                    snapshotRepo: "eos-libs-release"
-                )            
+                )          
                 }
             }
         }
@@ -82,7 +75,6 @@ spec:
                     pom: 'pom.xml',
                     goals: 'clean install',
                     deployerId: "MAVEN_DEPLOYER",
-                    resolverId: "MAVEN_RESOLVER"
                   )
                 }
             }
