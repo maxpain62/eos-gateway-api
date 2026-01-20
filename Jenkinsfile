@@ -2,7 +2,7 @@ podTemplate(yaml: readTrusted('pod.yaml')) {
   node(POD_LABEL) {
     stage('Checkout Source') {
         
-      git branch: 'main', url: 'https://github.com/maxpain62/eos-micro-services-admin.git'
+      git branch: 'main', url: 'https://github.com/maxpain62/eos-gateway-api.git'
       script {
             // Capture tag into a Groovy variable
             env.GIT_TAG = sh(
@@ -47,7 +47,7 @@ podTemplate(yaml: readTrusted('pod.yaml')) {
           build --frontend dockerfile.v0\
           --opt filename=Dockerfile --local context=.\
           --local dockerfile=.\
-          --output type=image,name=134448505602.dkr.ecr.ap-south-1.amazonaws.com/dev/eos-micro-services-admin:latest,push=true
+          --output type=image,name=134448505602.dkr.ecr.ap-south-1.amazonaws.com/dev/eos-gateway-api:latest,push=true
           """
       }
     }
