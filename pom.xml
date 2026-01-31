@@ -57,7 +57,7 @@
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
-	</dependencyManagement>
+	</dependencyManagement>	
 	<distributionManagement>
   		<repository>
     			<id>eos-eos-gateway-api</id>
