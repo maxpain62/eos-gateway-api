@@ -8,7 +8,7 @@ spec:
   containers:
     - name: buildkit
       image: moby/buildkit:v0.15.0
-      command: 
+      command:
         - cat
       tty: true
       volumeMounts:
@@ -20,8 +20,8 @@ spec:
           mountPath: /root/.docker
         - name: certs
           mountPath: /certs
-    - name: aws-cli
-      image: amazon/aws-cli
+    - name: aws-cli-helm
+      image: maxpain62/aws-cli:helm-3.20.0
       command:
         - cat
       tty: true
@@ -56,5 +56,5 @@ spec:
     - name: certs
       secret:
         secretName: buildkit-client-certs
-    - name:  git-tmp-volume
+    - name: git-tmp-volume
       emptyDir: {}
