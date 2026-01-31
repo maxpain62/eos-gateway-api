@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image: 134448505602.dkr.ecr.ap-south-1.amazonaws.com/dev/eos-gateway-api:latest
+
+port: 5555
+
+labels:
+  app: eos-gateway-api
+  env: dev
+
+namespace: eos-dev

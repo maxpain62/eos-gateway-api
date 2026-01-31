@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ Values.labels.app }}-deployment
+  labels:
+    app: {{ Values.labels.app }}-app
+    env: {{ Values.labels.env }}
+  namespace: {{ Values.namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ Values.labels.app }}
+      env: {{ Values.labels.env }}
+  template:
+    metadata:
+      name: {{ Values.labels.app }}
+      labels:
+        app: {{ Values.labels.app }}
+        env: {{ Values.labels.env }}
+    spec:
+      containers:
+        - name: {{ Values.labels.app }}-container
+          image:
+          ports:
+            - containerPort: {{ Values.port }}
+              protocol: TCP
